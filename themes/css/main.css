@@ -103,12 +103,14 @@ section.homepage-slider{
 	min-height:100px;
 }
 section.homepage-slider div.intro{
+    float:right;
 	position:absolute;
 	top:20%;
 	left:7%;
 	opacity:.7;
 }
 section.homepage-slider h1{
+    float:right;
 	background-color:#eb4800;
 	color:#fff;
 	padding:2px 7px;
@@ -123,6 +125,7 @@ section.homepage-slider p{
 	margin-bottom:2px;
 }
 section.homepage-slider span{
+    float:right;
 	background-color:#fff;
 	color:#000;	
 	padding:2px 10px;
