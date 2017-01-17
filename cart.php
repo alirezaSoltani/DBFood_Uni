@@ -1,4 +1,18 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if(isset($_SESSION["name"])){
+    $name = $_SESSION["name"];
+    echo '<form style="direction:rtl;float:inherit;background:#22313F;height:10%;">
+                    <form>
+                        <img  width="30" height="30" src="themes/images/user.png"><p style="color:#FFF;">$name</p>
+                        <a  href="signOut.php">خروج</a>
+                    </form>
+
+              </form>';
+}
+?>
+?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -37,7 +51,7 @@
 					<div class="account pull-right">
 						<ul class="user-menu">
                             <li><a href="#">حساب کاربری</a></li>
-                            <li><a href="cart.html">سبد غذا</a></li>
+                            <li><a href="cart.php">سبد غذا</a></li>
                             <!--<li><a href="checkout.html">Checkout</a></li>					-->
                             <li><a href="register.php">ورود</a></li>
 						</ul>
@@ -69,7 +83,7 @@
 							<tbody dir="ltr">
 								<tr dir="ltr">
 									<td><input type="checkbox" value="option1"></td>
-									<td><a href="product_detail.html"><img alt="" src="themes/images/ladies/9.jpg"></a></td>
+									<td><a href="product_detail.php"><img alt="" src="themes/images/ladies/9.jpg"></a></td>
 									<td>Fusce id molestie massa</td>
 									<td><input type="text" placeholder="1" class="input-mini"></td>
 									<td>$2,350.00</td>
@@ -77,7 +91,7 @@
 								</tr>			  
 								<tr dir="ltr">
 									<td><input type="checkbox" value="option1"></td>
-									<td><a href="product_detail.html"><img alt="" src="themes/images/ladies/1.jpg"></a></td>
+									<td><a href="product_detail.php"><img alt="" src="themes/images/ladies/1.jpg"></a></td>
 									<td>Luctus quam ultrices rutrum</td>
 									<td><input type="text" placeholder="2" class="input-mini"></td>
 									<td>$1,150.00</td>
@@ -85,7 +99,7 @@
 								</tr>
 								<tr dir="ltr">
 									<td><input type="checkbox" value="option1"></td>
-									<td><a href="product_detail.html"><img alt="" src="themes/images/ladies/3.jpg"></a></td>
+									<td><a href="product_detail.php"><img alt="" src="themes/images/ladies/3.jpg"></a></td>
 									<td>Wuam ultrices rutrum</td>
 									<td><input type="text" placeholder="1" class="input-mini"></td>
 									<td>$1,210.00</td>
@@ -123,20 +137,20 @@
 						<div class="block">	
 							<ul class="nav nav-list">
 								<li class="nav-header">SUB CATEGORIES</li>
-								<li><a href="products.html">Nullam semper elementum</a></li>
-								<li class="active"><a href="products.html">Phasellus ultricies</a></li>
-								<li><a href="products.html">Donec laoreet dui</a></li>
-								<li><a href="products.html">Nullam semper elementum</a></li>
-								<li><a href="products.html">Phasellus ultricies</a></li>
-								<li><a href="products.html">Donec laoreet dui</a></li>
+								<li><a href="products.php">Nullam semper elementum</a></li>
+								<li class="active"><a href="products.php">Phasellus ultricies</a></li>
+								<li><a href="products.php">Donec laoreet dui</a></li>
+								<li><a href="products.php">Nullam semper elementum</a></li>
+								<li><a href="products.php">Phasellus ultricies</a></li>
+								<li><a href="products.php">Donec laoreet dui</a></li>
 							</ul>
 							<br/>
 							<ul class="nav nav-list below">
 								<li class="nav-header">MANUFACTURES</li>
-								<li><a href="products.html">Adidas</a></li>
-								<li><a href="products.html">Nike</a></li>
-								<li><a href="products.html">Dunlop</a></li>
-								<li><a href="products.html">Yamaha</a></li>
+								<li><a href="products.php">Adidas</a></li>
+								<li><a href="products.php">Nike</a></li>
+								<li><a href="products.php">Dunlop</a></li>
+								<li><a href="products.php">Yamaha</a></li>
 							</ul>
 						</div>
 						<div class="block">
@@ -153,8 +167,8 @@
 											<li class="span3">
 												<div class="product-box">
 													<span class="sale_tag"></span>												
-													<a href="product_detail.html"><img alt="" src="themes/images/ladies/2.jpg"></a><br/>
-													<a href="product_detail.html" class="title">Fusce id molestie massa</a><br/>
+													<a href="product_detail.php"><img alt="" src="themes/images/ladies/2.jpg"></a><br/>
+													<a href="product_detail.php" class="title">Fusce id molestie massa</a><br/>
 													<a href="#" class="category">Suspendisse aliquet</a>
 													<p class="price">$261</p>
 												</div>
@@ -165,8 +179,8 @@
 										<ul class="thumbnails listing-products">
 											<li class="span3">
 												<div class="product-box">												
-													<a href="product_detail.html"><img alt="" src="themes/images/ladies/4.jpg"></a><br/>
-													<a href="product_detail.html" class="title">Tempor sem sodales</a><br/>
+													<a href="product_detail.php"><img alt="" src="themes/images/ladies/4.jpg"></a><br/>
+													<a href="product_detail.php" class="title">Tempor sem sodales</a><br/>
 													<a href="#" class="category">Urna nec lectus mollis</a>
 													<p class="price">$134</p>
 												</div>
@@ -184,10 +198,10 @@
 
                         <h4>دسترسی سریع</h4>
                         <ul class="nav">
-                            <li><a href="./index.html">خانه</a></li>
+                            <li><a href="./index.php">خانه</a></li>
                             <!--<li><a href="./about.html">درباره ما</a></li>-->
-                            <li><a href="./contact.html">ارتباط با ما</a></li>
-                            <li><a href="./cart.html">حساب کاربری</a></li>
+                            <li><a href="contact.php">ارتباط با ما</a></li>
+                            <li><a href="./cart.php">حساب کاربری</a></li>
                             <li><a href="register.php">ورود</a></li>
                         </ul>
 					</div>

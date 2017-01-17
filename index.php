@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+if(isset($_SESSION["name"])){
+    $name = $_SESSION["name"];
+    echo '<form style="direction:rtl;float:inherit;background:#22313F;height:10%;">
+                    <form>
+                        <img  width="30" height="30" src="themes/images/user.png"><p style="color:#FFF;">$name</p>
+                        <a  href="signOut.php">خروج</a>
+                    </form>
+
+              </form>';
+}
+?>
 <html lang="fa">
 	<head>
 		<meta charset="utf-8">
@@ -38,7 +51,7 @@
 					<div class="account pull-right">
 						<ul class="user-menu">				
 							<li><a href="#">حساب کاربری</a></li>
-							<li><a href="cart.html">سبد غذا</a></li>
+							<li><a href="cart.php">سبد غذا</a></li>
 							<!--<li><a href="checkout.html">Checkout</a></li>					-->
 							<li><a href="register.php">ورود</a></li>
 						</ul>
@@ -51,7 +64,7 @@
 				<!--<div class="navbar-inner main-menu">-->
 
 					<!--&lt;!&ndash;<nav id="menu" class="pull-right">&ndash;&gt;-->
-                        <!--&lt;!&ndash;&lt;!&ndash;<a href="index.html" class="logo pull-left"><img     width="100%"      src="themes/images/logo.png" class="site_logo" alt=""></a>   &ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;&lt;!&ndash;<a href="index.php" class="logo pull-left"><img     width="100%"      src="themes/images/logo.png" class="site_logo" alt=""></a>   &ndash;&gt;&ndash;&gt;-->
 						<!--&lt;!&ndash;&lt;!&ndash;<ul>&ndash;&gt;&ndash;&gt;-->
 							<!--&lt;!&ndash;&lt;!&ndash;<li><a href="./products.html">سنتی</a>&ndash;&gt;&ndash;&gt;-->
 								<!--&lt;!&ndash;&lt;!&ndash;<ul>&ndash;&gt;&ndash;&gt;-->
@@ -112,34 +125,34 @@
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
-														<p><a href="product_detail.html"><img src="themes/images/ladies/1.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-														<a href="products.html" class="category">Commodo consequat</a>
+														<p><a href="product_detail.php"><img src="themes/images/ladies/1.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">Ut wisi enim ad</a><br/>
+														<a href="products.php" class="category">Commodo consequat</a>
 														<p class="price">$17.25</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
-														<p><a href="product_detail.html"><img src="themes/images/ladies/2.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Quis nostrud exerci tation</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
+														<p><a href="product_detail.php"><img src="themes/images/ladies/2.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">Quis nostrud exerci tation</a><br/>
+														<a href="products.php" class="category">Quis nostrud</a>
 														<p class="price">$32.50</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="themes/images/ladies/3.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Know exactly turned</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
+														<p><a href="product_detail.php"><img src="themes/images/ladies/3.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">Know exactly turned</a><br/>
+														<a href="products.php" class="category">Quis nostrud</a>
 														<p class="price">$14.20</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="themes/images/ladies/4.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">You think fast</a><br/>
-														<a href="products.html" class="category">World once</a>
+														<p><a href="product_detail.php"><img src="themes/images/ladies/4.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">You think fast</a><br/>
+														<a href="products.php" class="category">World once</a>
 														<p class="price">$31.45</p>
 													</div>
 												</li>
@@ -149,33 +162,33 @@
 											<ul class="thumbnails">
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="themes/images/ladies/5.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Know exactly</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
+														<p><a href="product_detail.php"><img src="themes/images/ladies/5.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">Know exactly</a><br/>
+														<a href="products.php" class="category">Quis nostrud</a>
 														<p class="price">$22.30</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="themes/images/ladies/6.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-														<a href="products.html" class="category">Commodo consequat</a>
+														<p><a href="product_detail.php"><img src="themes/images/ladies/6.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">Ut wisi enim ad</a><br/>
+														<a href="products.php" class="category">Commodo consequat</a>
 														<p class="price">$40.25</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="themes/images/ladies/7.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">You think water</a><br/>
-														<a href="products.html" class="category">World once</a>
+														<p><a href="product_detail.php"><img src="themes/images/ladies/7.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">You think water</a><br/>
+														<a href="products.php" class="category">World once</a>
 														<p class="price">$10.45</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="themes/images/ladies/8.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Quis nostrud exerci</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
+														<p><a href="product_detail.php"><img src="themes/images/ladies/8.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">Quis nostrud exerci</a><br/>
+														<a href="products.php" class="category">Quis nostrud</a>
 														<p class="price">$35.50</p>
 													</div>
 												</li>
@@ -201,33 +214,33 @@
 												<li class="span3">
 													<div class="product-box">
 														<span class="sale_tag"></span>
-														<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware2.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-														<a href="products.html" class="category">Commodo consequat</a>
+														<p><a href="product_detail.php"><img src="themes/images/cloth/bootstrap-women-ware2.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">Ut wisi enim ad</a><br/>
+														<a href="products.php" class="category">Commodo consequat</a>
 														<p class="price">$25.50</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware1.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Quis nostrud exerci tation</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
+														<p><a href="product_detail.php"><img src="themes/images/cloth/bootstrap-women-ware1.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">Quis nostrud exerci tation</a><br/>
+														<a href="products.php" class="category">Quis nostrud</a>
 														<p class="price">$17.55</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware6.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Know exactly turned</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
+														<p><a href="product_detail.php"><img src="themes/images/cloth/bootstrap-women-ware6.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">Know exactly turned</a><br/>
+														<a href="products.php" class="category">Quis nostrud</a>
 														<p class="price">$25.30</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware5.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">You think fast</a><br/>
-														<a href="products.html" class="category">World once</a>
+														<p><a href="product_detail.php"><img src="themes/images/cloth/bootstrap-women-ware5.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">You think fast</a><br/>
+														<a href="products.php" class="category">World once</a>
 														<p class="price">$25.60</p>
 													</div>
 												</li>
@@ -237,33 +250,33 @@
 											<ul class="thumbnails">
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware4.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Know exactly</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
+														<p><a href="product_detail.php"><img src="themes/images/cloth/bootstrap-women-ware4.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">Know exactly</a><br/>
+														<a href="products.php" class="category">Quis nostrud</a>
 														<p class="price">$45.50</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware3.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Ut wisi enim ad</a><br/>
-														<a href="products.html" class="category">Commodo consequat</a>
+														<p><a href="product_detail.php"><img src="themes/images/cloth/bootstrap-women-ware3.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">Ut wisi enim ad</a><br/>
+														<a href="products.php" class="category">Commodo consequat</a>
 														<p class="price">$33.50</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware2.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">You think water</a><br/>
-														<a href="products.html" class="category">World once</a>
+														<p><a href="product_detail.php"><img src="themes/images/cloth/bootstrap-women-ware2.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">You think water</a><br/>
+														<a href="products.php" class="category">World once</a>
 														<p class="price">$45.30</p>
 													</div>
 												</li>
 												<li class="span3">
 													<div class="product-box">
-														<p><a href="product_detail.html"><img src="themes/images/cloth/bootstrap-women-ware1.jpg" alt="" /></a></p>
-														<a href="product_detail.html" class="title">Quis nostrud exerci</a><br/>
-														<a href="products.html" class="category">Quis nostrud</a>
+														<p><a href="product_detail.php"><img src="themes/images/cloth/bootstrap-women-ware1.jpg" alt="" /></a></p>
+														<a href="product_detail.php" class="title">Quis nostrud exerci</a><br/>
+														<a href="products.php" class="category">Quis nostrud</a>
 														<p class="price">$25.20</p>
 													</div>
 												</li>
@@ -333,10 +346,10 @@
 					<!--<div class="span3">-->
 						<h4>دسترسی سریع</h4>
 						<ul class="nav">
-							<li><a href="./index.html">خانه</a></li>
+							<li><a href="./index.php">خانه</a></li>
 							<!--<li><a href="./about.html">درباره ما</a></li>-->
-							<li><a href="./contact.html">ارتباط با ما</a></li>
-							<li><a href="./cart.html">حساب کاربری</a></li>
+							<li><a href="contact.php">ارتباط با ما</a></li>
+							<li><a href="./cart.php">حساب کاربری</a></li>
 							<li><a href="register.php">ورود</a></li>
 						</ul>
 					<!--</div>-->

@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if(isset($_SESSION["name"])){
+    $name = $_SESSION["name"];
+    echo '<form style="direction:rtl;float:inherit;background:#22313F;height:10%;">
+                    <form>
+                        <img  width="30" height="30" src="themes/images/user.png"><p style="color:#FFF;">$name</p>
+                        <a  href="signOut.php">خروج</a>
+                    </form>
+
+              </form>';
+}
+?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -37,7 +50,7 @@
 					<div class="account pull-right">
 						<ul class="user-menu">				
 							<li><a href="#">حساب کاربری</a></li>
-							<li><a href="cart.html">سبد غذا</a></li>
+							<li><a href="cart.php">سبد غذا</a></li>
 							<!--<li><a href="checkout.html">Checkout</a></li>					-->
 							<li><a href="register.php">ورود</a></li>
 						</ul>
@@ -105,10 +118,10 @@
                     <!--<div class="span3">-->
                     <h4>دسترسی سریع</h4>
                     <ul class="nav">
-                        <li><a href="./index.html">خانه</a></li>
+                        <li><a href="./index.php">خانه</a></li>
                         <!--<li><a href="./about.html">درباره ما</a></li>-->
-                        <li><a href="./contact.html">ارتباط با ما</a></li>
-                        <li><a href="./cart.html">حساب کاربری</a></li>
+                        <li><a href="contact.php">ارتباط با ما</a></li>
+                        <li><a href="./cart.php">حساب کاربری</a></li>
                         <li><a href="register.php">ورود</a></li>
                     </ul>
                     <!--</div>-->
