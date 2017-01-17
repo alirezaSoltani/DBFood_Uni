@@ -2,6 +2,7 @@
 <?php
 include 'connection.php';
 session_start();
+$eror = "";
 if (isset($_POST['register-submit'])) {
     if (isset($_POST['register-name'])) {
         if (isset($_POST['register-last-name'])) {
@@ -20,11 +21,8 @@ if (isset($_POST['register-submit'])) {
                                     $register_user_name = $_POST['register-user-name'];
                                     $register_password = $_POST['register-password'];
                                     $register_address = $_POST['register-address'];
-                                    $result = $conn->query("insert into person VALUES ('$register_user_name','$register_name','$register_last_name','$register_address',$register_tel,$register_mobile,'$register_password' )");
-//                                    echo $result;
-//                                    echo "insert into person VALUES ('$register_user_name','$register_name','$register_last_name','$register_address',$register_tel,$register_mobile,'$register_password')"   ;
-                                    if($result=="1"){
-                                        echo "sada";
+                                    $result = $conn->query("insert into customer_table VALUES ('$register_user_name','$register_name','$register_last_name','$register_address',$register_tel,$register_mobile,'$register_password' )");
+                                    if ($result == "1") {
                                         $_SESSION["user-name"] = $register_user_name;
                                         $_SESSION["name"] = $register_name;
                                     }
@@ -37,17 +35,35 @@ if (isset($_POST['register-submit'])) {
             }
         }
     }
-    if(isset($_SESSION["name"])){
-        $name = $_SESSION["name"];
-        echo '<form style="direction:rtl;float:inherit;background:#22313F;height:10%;">
+}
+if (isset($_POST['login-submit'])) {
+    if (isset($_POST['login-user-name'])) {
+        if (isset($_POST['login-password'])) {
+            $login_user_name = $_POST['login-user-name'];
+            $login_password = $_POST['login-password'];
+            $result = $conn->query("select * from customer_table where person_username='$login_user_name' AND person_password  = '$login_password'");
+//                echo "select * from customer_table where person_username='$login_user_name' AND person_password  = '$login_password'";
+            if ($result->num_rows == 0) {
+                $eror = "نام کاربری و یا رمز عبور نا معتبر میباشد";
+            } else {
+                $_SESSION["user-name"] = $login_user_name;
+                $row = $result->fetch_assoc();
+                $_SESSION["name"] = $row["person_fristName"];
+            }
+        }
+    }
+}
+if (isset($_SESSION["name"])) {
+    $name = $_SESSION["name"];
+    echo '<form style="direction:rtl;float:inherit;background:#22313F;height:10%;">
                     <form>
                         <img  width="30" height="30" src="themes/images/user.png"><p style="color:#FFF;">$name</p>
                         <a  href="signOut.php">خروج</a>
                     </form>
 
               </form>';
-    }
 }
+
 
 ?>
 <html lang="en">
@@ -88,10 +104,12 @@ if (isset($_POST['register-submit'])) {
         <div class="span8">
             <div class="account pull-right">
                 <ul class="user-menu">
-                    <li><a href="#">حساب کاربری</a></li>
+                    <li><a href="account.php">حساب کاربری</a></li>
                     <li><a href="cart.php">سبد غذا</a></li>
                     <!--<li><a href="checkout.html">Checkout</a></li>					-->
                     <li><a href="register.php">ورود</a></li>
+                    <li><a href="index.php">خانه</a></li>
+
                 </ul>
             </div>
         </div>
@@ -212,14 +230,15 @@ if (isset($_POST['register-submit'])) {
             <div class="span5">
                 <h4 class="title"><span class="text"><strong>اطلاعات حساب</strong>؟</span></h4>
 
-                <form action="#" method="post">
-                    <input type="hidden" name="next" value="/">
+                <form action="" method="post" class="form-stacked">
+                    <!--                    <input type="hidden" name="next" value="/">-->
                     <fieldset>
                         <div class="control-group">
                             <label class="control-label">نام کاربری</label>
 
                             <div class="controls">
-                                <input type="text" placeholder="نام کاربری را وارد کنید" id="username"
+                                <input type="text" name="login-user-name" placeholder="نام کاربری را وارد کنید"
+                                       id="username"
                                        class="input-xlarge">
                             </div>
                         </div>
@@ -227,14 +246,19 @@ if (isset($_POST['register-submit'])) {
                             <label class="control-label">رمز عبور</label>
 
                             <div class="controls">
-                                <input type="password" placeholder="رمز عبور را وارد کنید" name="password"
+                                <input type="password" placeholder="رمز عبور را وارد کنید" name="login-password"
                                        class="input-xlarge">
                             </div>
                         </div>
                         <div class="control-group">
+                            <label style="color:red; " class="control-label"><?php echo $eror; ?></label>
+
+
+                        </div>
+                        <div class="actions">
                             <input tabindex="3" class="btn btn-inverse large" type="submit" name="login-submit"
                                    value="ورود ">
-                            <hr>
+                            <!--                            <hr>-->
                             <!--<p class="reset">Recover your <a tabindex="4" href="#" title="Recover your username or password">username or password</a></p>-->
                         </div>
                     </fieldset>
@@ -248,10 +272,10 @@ if (isset($_POST['register-submit'])) {
             <!--<div class="span3">-->
             <h4>دسترسی سریع</h4>
             <ul class="nav">
-                <li><a href="./index.php">خانه</a></li>
+                <li><a href="index.php">خانه</a></li>
                 <!--<li><a href="./about.html">درباره ما</a></li>-->
                 <li><a href="contact.php">ارتباط با ما</a></li>
-                <li><a href="./cart.php">حساب کاربری</a></li>
+                <li><a href="account.php">حساب کاربری</a></li>
                 <li><a href="register.php">ورود</a></li>
             </ul>
             <!--</div>-->
