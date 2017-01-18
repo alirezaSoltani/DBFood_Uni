@@ -5,10 +5,9 @@ if (isset($_SESSION["name"])) {
     $name = $_SESSION["name"];
     echo '<form style="direction:rtl;float:inherit;background:#22313F;height:10%;">
                     <form>
-                        <img  width="30" height="30" src="themes/images/user.png"><p style="color:#FFF;">$name</p>
+                        <img  width="30" height="30" src="themes/images/user.png"><p style="color:#FFF;">'.$name.'</p>
                         <a  href="signOut.php">خروج</a>
                     </form>
-
               </form>';
 }
 ?>
@@ -18,41 +17,26 @@ if (isset($_SESSION["name"])) {
     <title>ارتباط با ما</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <!--[if ie]>
     <meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
-    <!-- bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="themes/css/bootstrappage.css" rel="stylesheet"/>
-
-    <!-- global styles -->
     <link href="themes/css/flexslider.css" rel="stylesheet"/>
     <link href="themes/css/main.css" rel="stylesheet"/>
-
-    <!-- scripts -->
     <script src="themes/js/jquery-1.7.2.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="themes/js/superfish.js"></script>
     <script src="themes/js/jquery.scrolltotop.js"></script>
-    <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
 <div id="top-bar" class="container">
     <div class="row">
-        <div class="span4">
-            <form method="POST" class="search_form">
-                <input type="text" class="input-block-level search-query" Placeholder="eg. T-sirt">
-            </form>
-        </div>
         <div class="span8">
             <div class="account pull-right">
                 <ul class="user-menu">
                     <li><a href="account.php">حساب کاربری</a></li>
-                    <li><a href="cart.php">سبد غذا</a></li>
-                    <!--<li><a href="checkout.html">Checkout</a></li>					-->
                     <li><a href="register.php">ورود</a></li>
                     <li><a href="index.php">خانه</a></li>
                 </ul>
@@ -126,28 +110,13 @@ if (isset($_SESSION["name"])) {
     </section>
     <section id="footer-bar">
         <div dir="rtl" class="row">
-            <!--<div class="span3">-->
             <h4>دسترسی سریع</h4>
             <ul class="nav">
                 <li><a href="index.php">خانه</a></li>
-                <!--<li><a href="./about.html">درباره ما</a></li>-->
                 <li><a href="contact.php">ارتباط با ما</a></li>
                 <li><a href="account.php">حساب کاربری</a></li>
                 <li><a href="register.php">ورود</a></li>
             </ul>
-            <!--</div>-->
-
-            <!--<div class="span5">-->
-            <!--<p class="logo"><img src="themes/images/logo.png" class="site_logo" alt=""></p>-->
-            <!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. the  Lorem Ipsum has been the industry's standard dummy text ever since the you.</p>-->
-            <!--<br/>-->
-            <!--<span class="social_icons">-->
-            <!--<a class="facebook" href="#">Facebook</a>-->
-            <!--<a class="twitter" href="#">Twitter</a>-->
-            <!--<a class="skype" href="#">Skype</a>-->
-            <!--<a class="vimeo" href="#">Vimeo</a>-->
-            <!--</span>-->
-            <!--</div>-->
         </div>
     </section>
     <section id="copyright">

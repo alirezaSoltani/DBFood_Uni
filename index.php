@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <?php
+include 'connection.php';
 session_start();
 if (isset($_SESSION["name"])) {
     $name = $_SESSION["name"];
     echo '<form style="direction:rtl;float:inherit;background:#22313F;height:10%;">
                     <form>
-                        <img  width="30" height="30" src="themes/images/user.png"><p style="color:#FFF;">$name</p>
+                        <img  width="30" height="30" src="themes/images/user.png"><p style="color:#FFF;">'.$name.'</p>
                         <a  href="signOut.php">خروج</a>
                     </form>
 
@@ -15,7 +16,8 @@ if (isset($_SESSION["name"])) {
 <html lang="fa">
 <head>
     <meta charset="utf-8">
-    <title>رزو آنلاین غذا</title>
+    <meta charset="utf-8">
+    <title>رزرو آنلاین غذا</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <!--[if ie]>
@@ -52,8 +54,6 @@ if (isset($_SESSION["name"])) {
             <div class="account pull-right">
                 <ul class="user-menu">
                     <li><a href="account.php">حساب کاربری</a></li>
-                    <li><a href="cart.php">سبد غذا</a></li>
-                    <!--<li><a href="checkout.html">Checkout</a></li>					-->
                     <li><a href="register.php">ورود</a></li>
                     <li><a href="index.php">خانه</a></li>
                 </ul>
@@ -118,107 +118,56 @@ if (isset($_SESSION["name"])) {
 <div class="row">
     <div class="span12">
         <h4 class="title">
-            <span class="pull-left"><span class="text"><span
-                        class="line">Feature <strong>Products</strong></span></span></span>
-									<span class="pull-right">
-										<a class="left button" href="#myCarousel" data-slide="prev"></a><a
-                                            class="right button" href="#myCarousel" data-slide="next"></a>
-									</span>
+            <span class="pull-right"><span class="text"><span
+                        class="line"><strong>منوی غذاها</strong></span></span>
+            </span>
+									<!-- <span class="pull-right">
+										<a class="left button" href="#myCarousel" data-slide="prev"></a>
+                                        <a class="right button" href="#myCarousel" data-slide="next"></a>
+			                        </span> !-->
         </h4>
+
+
+        <!--**************************************************************************!-->
+        <!--                             LOADING MENU                                 !-->
+        <!--**************************************************************************!-->
 
         <div id="myCarousel" class="myCarousel carousel slide">
             <div class="carousel-inner">
                 <div class="active item">
                     <ul class="thumbnails">
-                        <li class="span3">
-                            <div class="product-box">
-                                <span class="sale_tag"></span>
-
-                                <p><a href="product_detail.php"><img src="themes/images/ladies/1.jpg" alt=""/></a></p>
-                                <a href="product_detail.php" class="title">Ut wisi enim ad</a><br/>
-                                <a href="products.php" class="category">Commodo consequat</a>
-
-                                <p class="price">$17.25</p>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="product-box">
-                                <span class="sale_tag"></span>
-
-                                <p><a href="product_detail.php"><img src="themes/images/ladies/2.jpg" alt=""/></a></p>
-                                <a href="product_detail.php" class="title">Quis nostrud exerci tation</a><br/>
-                                <a href="products.php" class="category">Quis nostrud</a>
-
-                                <p class="price">$32.50</p>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="product-box">
-                                <p><a href="product_detail.php"><img src="themes/images/ladies/3.jpg" alt=""/></a></p>
-                                <a href="product_detail.php" class="title">Know exactly turned</a><br/>
-                                <a href="products.php" class="category">Quis nostrud</a>
-
-                                <p class="price">$14.20</p>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="product-box">
-                                <p><a href="product_detail.php"><img src="themes/images/ladies/4.jpg" alt=""/></a></p>
-                                <a href="product_detail.php" class="title">You think fast</a><br/>
-                                <a href="products.php" class="category">World once</a>
-
-                                <p class="price">$31.45</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="item">
-                    <ul class="thumbnails">
-                        <li class="span3">
-                            <div class="product-box">
-                                <p><a href="product_detail.php"><img src="themes/images/ladies/5.jpg" alt=""/></a></p>
-                                <a href="product_detail.php" class="title">Know exactly</a><br/>
-                                <a href="products.php" class="category">Quis nostrud</a>
-
-                                <p class="price">$22.30</p>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="product-box">
-                                <p><a href="product_detail.php"><img src="themes/images/ladies/6.jpg" alt=""/></a></p>
-                                <a href="product_detail.php" class="title">Ut wisi enim ad</a><br/>
-                                <a href="products.php" class="category">Commodo consequat</a>
-
-                                <p class="price">$40.25</p>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="product-box">
-                                <p><a href="product_detail.php"><img src="themes/images/ladies/7.jpg" alt=""/></a></p>
-                                <a href="product_detail.php" class="title">You think water</a><br/>
-                                <a href="products.php" class="category">World once</a>
-
-                                <p class="price">$10.45</p>
-                            </div>
-                        </li>
-                        <li class="span3">
-                            <div class="product-box">
-                                <p><a href="product_detail.php"><img src="themes/images/ladies/8.jpg" alt=""/></a></p>
-                                <a href="product_detail.php" class="title">Quis nostrud exerci</a><br/>
-                                <a href="products.php" class="category">Quis nostrud</a>
-
-                                <p class="price">$35.50</p>
-                            </div>
-                        </li>
+                        <?php
+                            $selectQuery = "SELECT * FROM food_table WHERE food_ava>0";
+                            $result = $conn->query($selectQuery);
+                            while($row = $result->fetch_assoc())
+                            {
+                                echo '<li class="span3">
+                                      <div class="product-box">
+                                        <span class="sale_tag" dir="rtl"></span>
+                                        <p><a href=product_detail.php?foodId='.$row["food_number"].'><img src="themes/images/menu/'.$row["food_name"].'.jpg" alt=""/></a></p>
+                                        <a href=product_detail.php?foodId='.$row["food_number"].'class="title">'.$row["food_name"].'</a><br/>
+                                        <a href=product_detail.php?foodId='.$row["food_number"].' class="category">'.$row["food_sundry"].'</a>
+                                        <p class="price">'.$row["food_price"].'</p>
+                                    </div>
+                                    </li>';
+                            }
+                        ?>
                     </ul>
                 </div>
             </div>
         </div>
+
+
+        <!--**************************************************************************!-->
+        <!--                      END OF LOADING MENU                                 !-->
+        <!--**************************************************************************!-->
+
+
     </div>
 </div>
 <br/>
 
-<div class="row">
+<!-- <div class="row">
     <div class="span12">
         <h4 class="title">
             <span class="pull-left"><span class="text"><span class="line">Latest <strong>Products</strong></span></span></span>
@@ -323,8 +272,8 @@ if (isset($_SESSION["name"])) {
             </div>
         </div>
     </div>
-</div>
-<div class="row feature_box">
+</div> !-->
+<!--  <div class="row feature_box">
     <div class="span4">
         <div class="service">
             <div class="responsive">
@@ -357,9 +306,11 @@ if (isset($_SESSION["name"])) {
     </div>
 </div>
 </div>
-</div>
+</div> !-->
+
 </section>
-<section class="our_client">
+
+<!-- <section class="our_client">
     <h4 class="title"><span class="text">Manufactures</span></h4>
 
     <div class="row">
@@ -382,7 +333,8 @@ if (isset($_SESSION["name"])) {
             <a href="#"><img alt="" src="themes/images/clients/4.png"></a>
         </div>
     </div>
-</section>
+</section> !-->
+
 <section id="footer-bar">
     <div dir="rtl" class="row">
         <!--<div class="span3">-->
@@ -393,8 +345,8 @@ if (isset($_SESSION["name"])) {
             <li><a href="contact.php">ارتباط با ما</a></li>
             <li><a href="account.php">حساب کاربری</a></li>
             <li><a href="register.php">ورود</a></li>
-
         </ul>
+
         <!--</div>-->
 
         <!--<div class="span5">-->
@@ -411,7 +363,7 @@ if (isset($_SESSION["name"])) {
     </div>
 </section>
 <section id="copyright">
-    <span>Copyright 2017 SyediNezhad , Soltani , Moini  All right reserved.</span>
+    <span>Copyright 2017 SeyediNezhad , Soltani , Moini  All rights reserved.</span>
 </section>
 </div>
 <script src="themes/js/common.js"></script>
